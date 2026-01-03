@@ -1,0 +1,110 @@
+menu "Cookie Configuration"
+
+  choice LCD_DRIVER
+    prompt "LCD Driver"
+    default LCD_DRIVER_GC9A01
+
+    config LCD_DRIVER_GC9A01
+        bool "GC9A01"
+  endchoice
+
+  choice TP_DRIVER
+    prompt "Touchpanel Driver"
+    default TP_DRIVER_CST816D
+
+    config TP_DRIVER_CST816D
+        bool "CST816D"
+  endchoice
+
+  config TP_SDA_GPIO
+    int "GPIO for Touchpanel SDA"
+    default 4
+
+  config TP_SCL_GPIO
+    int "GPIO for Touchpanel SCL"
+    default 5
+  
+  config TP_INT_GPIO
+    int "GPIO for Touchpanel INT"
+    default 0
+
+  config TP_RST_GPIO
+    int "GPIO for Touchpanel RST"
+    default 1
+
+  choice DISP_SPI_TYPE
+    prompt "SPI type for display"
+    default DISP_SPI_TYPE_3WIRE
+
+    config DISP_SPI_TYPE_3WIRE
+        bool "3 Wire"
+    config DISP_SPI_TYPE_4WIRE
+        bool "4 Wire"
+  endchoice
+
+  config DISP_SPI_HOST
+    int "SPI Host for Display"
+    default 2
+
+  config DISP_SPI_CS_GPIO
+    int "GPIO for Display CS"
+    default 10
+
+  config DISP_SPI_MOSI_GPIO
+    int "GPIO for Display MOSI"
+    default 10
+
+  config DISP_SPI_SCLK_GPIO
+    int "GPIO for Display SCLK"
+    default 6
+
+  config DISP_SPI_DC_GPIO
+    int "GPIO for Display DC"
+    default 2
+
+  config DISP_SPI_MISO_GPIO
+      depends on DISP_SPI_TYPE_4WIRE
+      int "GPIO for Display MISO"
+      default -1
+
+  config DISP_SPI_FREQ
+      int "SPI Frequency (MHz)"
+      default 40
+      range 1 80
+      help
+          SPI clock frequency in MHz for display communication
+
+  config DISP_RST_GPIO
+      int "GPIO for Display RST"
+      default 5
+      help
+          GPIO pin for display reset control
+
+  config DISP_BL_GPIO
+      int "GPIO for Display Backlight"
+      default 4
+      help
+          GPIO pin for display backlight control
+
+  config I2C_MASTER_FREQ
+      int "I2C Frequency (kHz)"
+      default 400
+      range 100 1000
+      help
+          I2C clock frequency in kHz for touchscreen communication
+
+  config LCD_H_RES
+      int "Display Horizontal Resolution"
+      default 240
+      range 100 1000
+      help
+          Display horizontal resolution in pixels
+
+  config LCD_V_RES
+      int "Display Vertical Resolution"
+      default 240
+      range 100 1000
+      help
+          Display vertical resolution in pixels
+
+endmenu

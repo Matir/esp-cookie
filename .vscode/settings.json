@@ -1,0 +1,12 @@
+{
+    "idf.pythonInstallPath": "/opt/homebrew/bin/python3",
+    "C_Cpp.default.configurationProvider": "espressif.idf",
+    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.autocomplete": "Default",
+    "files.exclude": {
+        "**/.git": true,
+        "**/build": true,
+        "**/sdkconfig.old": true
+    }
+}
