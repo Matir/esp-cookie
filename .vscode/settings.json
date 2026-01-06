@@ -1,12 +1,24 @@
 {
-    "idf.pythonInstallPath": "/opt/homebrew/bin/python3",
-    "C_Cpp.default.configurationProvider": "espressif.idf",
-    "C_Cpp.errorSquiggles": "Enabled",
-    "C_Cpp.intelliSenseEngine": "Default",
-    "C_Cpp.autocomplete": "Default",
-    "files.exclude": {
-        "**/.git": true,
-        "**/build": true,
-        "**/sdkconfig.old": true
-    }
+  "idf.pythonInstallPath": "/opt/homebrew/bin/python3",
+  "C_Cpp.default.configurationProvider": "espressif.idf",
+  "C_Cpp.errorSquiggles": "Enabled",
+  "C_Cpp.intelliSenseEngine": "Default",
+  "C_Cpp.autocomplete": "Default",
+  "files.exclude": {
+    "**/.git": true,
+    "**/build": true,
+    "**/sdkconfig.old": true
+  },
+  "idf.openOcdConfigs": [
+    "board/esp32c3-builtin.cfg"
+  ],
+  "idf.customExtraVars": {
+    "IDF_TARGET": "esp32c3"
+  },
+  "clangd.path": "/Users/david/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd",
+  "clangd.arguments": [
+    "--background-index",
+    "--query-driver=**",
+    "--compile-commands-dir=/Users/david/Projects/esp-cookie/build"
+  ]
 }

@@ -95,5 +95,5 @@ direct_dependencies:
 - espressif/esp_lvgl_port
 - espressif/led_strip
 manifest_hash: 34d78e295a906da35d48f4328612b2716ad1d0edc03afbdfe3c1836716d4b8fd
-target: esp32
+target: esp32c3
 version: 2.0.0
